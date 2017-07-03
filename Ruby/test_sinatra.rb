@@ -1,0 +1,1 @@
+{:a => 1, :b => 2}.each {|key,value| p "#{key}, #{value}"}
