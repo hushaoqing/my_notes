@@ -39,6 +39,22 @@ class circle(object):
     def area(self):
         print "Computing area"
         return math.pi * self.arg ** 2
+
+class ClassName(object):
+  """docstring for ClassName"""
+  def __init__(self):
+    self.l = []
+    self.le = 0
+
+  @property
+  def __len__(self):
+    return self.le
+
+  def add(self, a):
+    self.l.append(a)
+    self.le += 1
+# you can use len() on ClassName because of __len__
+
 if __name__ == '__main__':
     c = circle(4)
     print vars(c)
