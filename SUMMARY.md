@@ -3,7 +3,7 @@
 * Python
   * [PythonCookbook](Python/PythonCookbook/summary.md)
   * [Python_None](Python/PythonTips/Python_None.md)
-  * [Python___xxx__](Python/PythonTips/Python___xxx__.md)
+  * [Python__xxx__](Python/PythonTips/Python__xxx__.md)
   * [Python_import](Python/PythonTips/Python_import.md)
   <!-- * [ProblemSolving](Python/ProblemSolving/A.md) -->
 * Ruby
