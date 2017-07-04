@@ -14,5 +14,5 @@
   * [Docker](Docker/Docker.md)
 * Dairy
   * [20170615](Diary/20170615.md)
-* [Leetcode](leetcode.py)
+* [Leetcode](leetcode.md)
 * [Git](git.md)
