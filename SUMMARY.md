@@ -12,6 +12,7 @@
   * [RubyMetaprogramming](Ruby/RubyMetaprogramming.md)
   * [RubyProgrammingLanguage](Ruby/RubyProgrammingLanguage.md)
 * TheLittleSchemer
+  * [Chapter 3](TheLittleSchemer/3.md)
   * [Chapter 4](TheLittleSchemer/4.md)
 * Docker
   * [Docker](Docker/Docker.md)
