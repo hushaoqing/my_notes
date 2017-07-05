@@ -18,6 +18,7 @@ class Stack(object):
 ```
 
 * Chapter 3.7
+
 ```
 def StackTest():
   tag = True
@@ -38,6 +39,7 @@ def StackTest():
 ```
 
 * Chapter 3.8
+
 ```
 def binay(n, base):
   s = Stack()
@@ -49,7 +51,9 @@ def binay(n, base):
     tt += str(s.pop)
   return tt
 ```
+
 * Chapter 3.9
+
 ```
 def infixToPostfix(infixexpr):
     prec = {}
@@ -81,8 +85,8 @@ def infixToPostfix(infixexpr):
     while not opStack.isEmpty:
         postfixList.append(opStack.pop())
     return " ".join(postfixList)
-# print(infixToPostfix("( A + B ) * ( C + D )"))
-# print(infixToPostfix("( A + B ) * C - ( D - E ) * ( F + G )"))
+print(infixToPostfix("( A + B ) * ( C + D )"))
+print(infixToPostfix("( A + B ) * C - ( D - E ) * ( F + G )"))
 
 def postfixEval(postfixExpr):
   import operator as op

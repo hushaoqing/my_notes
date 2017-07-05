@@ -11,7 +11,8 @@
 * Ruby
   * [RubyMetaprogramming](Ruby/RubyMetaprogramming.md)
   * [RubyProgrammingLanguage](Ruby/RubyProgrammingLanguage.md)
-* TheLittleScheme
+* TheLittleSchemer
+  * [Chapter 4](TheLittleSchemer/4.md)
 * Docker
   * [Docker](Docker/Docker.md)
 * Dairy
