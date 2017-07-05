@@ -26,6 +26,7 @@ def get_db():
     """
     if not hasattr(g, 'sqlite_db'):
         g.sqlite_db = connect_db()
+    print g.__dict__
     return g.sqlite_db
 
 @app.teardown_appcontext
