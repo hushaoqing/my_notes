@@ -9,7 +9,6 @@
   * [Python_import](Python/PythonTips/Python_import.md)
   * [Python_hiddenFeatures](Python/PythonTips/Python_hiddenFeatures.md)
   * [Python_regexParseTree](Python/PythonTips/Python_regexParseTree.md)
-
 * Ruby
   * [RubyMetaprogramming](Ruby/RubyMetaprogramming.md)
   * [RubyProgrammingLanguage](Ruby/RubyProgrammingLanguage.md)
