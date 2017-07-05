@@ -1,4 +1,5 @@
 ## Chapter 3 [Stack, Queue, Deque, Orderd List, Linked List]
+
 ```
 class Stack(object):
   """docstring for Stack"""
@@ -15,12 +16,13 @@ class Stack(object):
   def lenth(self):
     return len(self.stack)
 ```
+
 * Chapter 3.7
 ```
 def StackTest():
   tag = True
   s = Stack()
-  for i in "{{([][])}()}":
+  for i in "([{":
     if i in "([{":
       s.push(i)
     else:
