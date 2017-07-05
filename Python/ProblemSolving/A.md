@@ -108,3 +108,87 @@ print(postfixEval('7 8 + 3 2 + +'))
 ```
 
 ## Chapter 4 Recursion
+
+## Chapter 5 Searching and Sorting
+
+### Searching
+```
+class HashTable(object):
+    """docstring for HashTable"""
+    def __init__(self):
+        self.size     = 11
+        self.slots    = [None] * self.size
+        self.data     = [None] * self.size
+        self.hashfunc = lambda key,size: key % size
+        self.rehash   = lambda oldhash,size,: (oldhash + 1) % size
+    def put(self, key, data):
+        oldhash = self.hashfunc(key, self.size)
+        if self.slots[oldhash] is None:
+            self.slots[oldhash] = key
+            self.data[oldhash]  = data
+        else:
+            if self.slots[oldhash] == key:
+                self.data[oldhash] = data
+            else:
+                nextslot = self.rehash(oldhash, self.size)
+                while nextslot is not None and self.slots[nextslot] != key:
+                    nextslot = self.rehash(nextslot, self.size)
+                if self.slots[nextslot] is None:
+                    self.slots[nextslot] = key
+                    self.data[nextslot]  = data
+                else:
+                    self.data[nextslot] = data
+    def get(self, key):
+        oldhash = self.hashfunc(key, self.size)
+        data = None
+        found = False
+        stop = False
+        p = oldhash
+        while self.slots[p] is not None and not found and not stop:
+            if self.slots[p] == key:
+                found = True
+            else:
+                oldhash = self.rehash(p, self.size)
+                if p == oldhash:
+                    stop = True
+        return data
+    def __getitem__(self, key):
+        return self.get(key)
+    def __setitem__(self, key, data):
+        self.put(key, data)
+if __name__ == '__main__':
+    h = HashTable()
+    h[54] = "cat"
+    h[26] = "dog"
+    h[77] = "bird"
+    print h.slots
+    print h[77]
+    # [77, None, None, None, 26, None, None, None, None, None, 54]
+    # ['bird', None, None, None, 'dog', None, None, None, None, None, 'cat']
+    # bird
+```
+### Sorting
+```
+def bubbleSort(alist):
+    for pas in range(0, len(alist)):
+        for j in range(pas):
+            if alist[j] > alist[j + 1]:
+                alist[j], alist[j + 1] = alist[j + 1], alist[j]
+
+def selectionSort(alist):
+    for pas in range(len(alist)-1,0,-1):
+        pos = 0
+        for l in range(1, pas + 1):
+            if alist[l] > alist[pos]:
+                pos = l
+        alist[pas], alist[pos] = alist[pos], alist[pas]
+
+def insertSort(alist):
+    for i in range(1, len(alist)):
+        current = alist[i]
+        p = i
+        while p > 0 and alist[p - 1] > current:
+            alist[p] = alist[p - 1]
+            p -= 1
+        alist[p] = current
+```
