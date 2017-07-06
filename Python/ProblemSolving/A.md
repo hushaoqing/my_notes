@@ -17,7 +17,54 @@ class Stack(object):
     return len(self.stack)
 ```
 
-* Chapter 3.7
+```
+class Node(object):
+    """docstring for Node"""
+    def __init__(self, initdata):
+        self.data = initdata
+        self.next = Node
+
+class UnorderedList(object):
+    """docstring for UnorderedList"""
+    def __init__(self):
+        self.head = None
+    def isEmpty(self):
+        return self.head is Node
+    def add(self, item):
+        tmp = Node(item)
+        tmp.next = self.head
+        self.head = tmp
+    def size(self):
+        current = self.head
+        count = 0
+        while current is not None:
+            count += 1
+            current = current.next
+        return count
+    def search(self, item):
+        current = self.head
+        found = False
+        while current != None and not found:
+            if current.data == item:
+                found = True
+            else:
+                current = current.next
+        return found
+    def remove(self, item):
+        current = self.head
+        pre = None
+        found = False
+        while not found:
+            if current.data == item:
+                found = True
+            else:
+                pre = current
+                current = current.next
+        if pre is None:
+            self.head = current.next
+        else:
+            pre.next = current.next
+```
 
 ```
 def StackTest():
@@ -38,8 +85,6 @@ def StackTest():
     print False
 ```
 
-* Chapter 3.8
-
 ```
 def binay(n, base):
   s = Stack()
@@ -51,8 +96,6 @@ def binay(n, base):
     tt += str(s.pop)
   return tt
 ```
-
-* Chapter 3.9
 
 ```
 def infixToPostfix(infixexpr):
@@ -191,4 +234,58 @@ def insertSort(alist):
             alist[p] = alist[p - 1]
             p -= 1
         alist[p] = current
+
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist) > 1:
+        mid = len(alist) // 2
+        left = alist[:mid]
+        right = alist[mid:]
+        mergeSort(left)
+        mergeSort(right)
+
+        i, j, k = 0, 0, 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                alist[k] = left[i]
+                i += 1
+            else:
+                alist[k] = right[j]
+                j += 1
+            k += 1
+        while i < len(left):
+            alist[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            alist[k] = right[j]
+            j += 1
+            k += 1
+    print("Merging ",alist)
+
+def quickSort(alist):
+    quickSortHelper(alist, 0, len(alist) - 1)
+
+def quickSortHelper(alist, first, last):
+    if first < last:
+        pp = quick(alist, first, last)
+        quickSortHelper(alist, first, pp - 1)
+        quickSortHelper(alist, pp + 1, last)
+def quick(alist, first, last):
+    tag = alist[first]
+    left_mark = first + 1
+    right_mark = last
+    done = False
+    while not done:
+        while left_mark <= right_mark and alist[left_mark] <= tag:
+            left_mark += 1
+        while alist[right_mark] >= tag and right_mark >= left_mark:
+            right_mark -= 1
+        if left_mark > right_mark:
+            done = True
+        else:
+            alist[left_mark], alist[right_mark] = alist[right_mark], alist[left_mark]
+    alist[first], alist[right_mark] = alist[right_mark], alist[first]
+    print alist
+    return right_mark
 ```
