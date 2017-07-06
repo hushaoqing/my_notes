@@ -289,3 +289,52 @@ def quick(alist, first, last):
     print alist
     return right_mark
 ```
+
+## Chapter 6 Tree
+```
+myTree = ['a',   #root
+      ['b',  #left subtree
+       ['d', [], []],
+       ['e', [], []] ],
+      ['c',  #right subtree
+       ['f', [], []],
+       [] ]
+     ]
+def BinaryTreeUseList(r):
+    return [r, [], []]
+def insertLeft(root, item):
+    t = root.pop(1)
+    if len(t) > 1:
+        root.insert(1, [item, t, []])
+    else:
+        root.insert(1, [item, [], []])
+    return root
+def insertRight(root, item):
+    t = root.pop(2)
+    if len(t) > 1:
+        root.insert(2, [item, [], t])
+    else:
+        root.insert(2, [item, [], []])
+    return root
+
+class BinaryTree:
+    """docstring for BinaryTree"""
+    def __init__(self, arg):
+        self.key = arg
+        self.left = None
+        self.right = None
+    def insertLeft(self, item):
+        if self.left is None:
+            self.left = BinaryTree(item)
+        else:
+            t = BinaryTree(item)
+            t.left = self.left
+            self.left = t
+    def insertRight(self, item):
+        if self.right is None:
+            self.right = BinaryTree(item)
+        else:
+            t = BinaryTree(item)
+            t.right = self.right
+            self.right = t
+```
