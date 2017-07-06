@@ -337,4 +337,35 @@ class BinaryTree:
             t = BinaryTree(item)
             t.right = self.right
             self.right = t
+            
+def buildParseTree(flist):
+    fl = flist.split()
+    fstack = Stack()
+    eTree = BinaryTree("")
+    fstack.push(eTree)
+    current = eTree
+    for f in fl:
+        print f
+        print "*" * 20
+        print fstack.lenth()
+        if f == "(":
+            current.insertLeft("")
+            fstack.push(current)
+            current = current.left
+        elif f.isdigit(): # numbers: 3, 6; elif f.isdigit()
+            current.root = int(f)
+            parent = fstack.pop()
+            current = parent
+        elif f in ['+', '-', '*', '/']:
+            current.root = f
+            current.insertRight("")
+            fstack.push(current)
+            current = current.right
+        elif f == ')':
+            current = fstack.pop()
+        else:
+            raise ValueError
+        print fstack.lenth()
+    return eTree
+pt = buildParseTree("( ( 10 + 5 ) * 3 )")
 ```
