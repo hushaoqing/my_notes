@@ -17,7 +17,7 @@
   * [Chapter 4](TheLittleSchemer/4.md)
 * [Docker](Docker/README.md)
   * [Docker](Docker/Docker.md)
-* [Dairy](Daily/README.md)
+* [Diary](Diary/README.md)
   * [20170615](Diary/20170615.md)
 * [Tools](Tools/README.md)
   * [Leetcode](Tools/leetcode.md)

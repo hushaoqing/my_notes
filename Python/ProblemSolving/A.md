@@ -368,4 +368,58 @@ def buildParseTree(flist):
         print fstack.lenth()
     return eTree
 pt = buildParseTree("( ( 10 + 5 ) * 3 )")
+
+class BinHeap:
+    """docstring for BinHeap"""
+    def __init__(self):
+        self.heapList = [0]
+        self.size = 1
+
+    def insert(self, item):
+        self.heapList.append(item)
+        self.size += 1
+        self.readjust(self.size)
+    def readjust(self, i):
+        while i // 2 > 0:
+            parent = i // 2
+            if self.heapList[i] < self.heapList[parent]:
+                self.heapList[i], self.heapList[parent] = self.heapList[parent], self.heapList[i]
+            i = i // 2
+
+    def delMin(self):
+        data = self.heapList[1]
+        self.heapList[1] = self.heapList[self.size]
+        self.size -= 1
+        self.heapList.pop()
+        self.perDown(1)
+        return data
+    def perDown(self, i):
+        while (i * 2) < self.size:
+            mc = self.minChild(i)
+            if self.heapList[i] > self.heapList[mc]:
+                self.heapList[i], self.heapList[mc] = self.heapList[mc], self.heapList[i]
+            i = mc
+    def minChild(self, i):
+        if i * 2 + 1 > self.size:
+            return i * 2
+        else:
+            if self.heapList[i * 2] < self.heapList[i * 2 + 1]:
+                return i * 2
+            else:
+                return i * 2 + 1
+    def buildHeap(self, alist):
+        i = len(alist) // 2
+        self.size = len(alist)
+        self.heapList = [0] + alist[:]
+        while (i > 0):
+            self.perDown(i)
+            i -= 1
+bh = BinHeap()
+bh.buildHeap([9,5,6,2,3])
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+print(bh.delMin())
+
 ```
