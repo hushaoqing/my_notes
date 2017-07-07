@@ -1,6 +1,6 @@
 # summary
 
-* Python
+* [Python](Python/README.md)
   * [Flask](Python/Flask/A.md)
   * [PythonCookbook](Python/PythonCookbook/summary.md)
   * [ProblemSolving](Python/ProblemSolving/A.md)
@@ -9,16 +9,17 @@
   * [Python_import](Python/PythonTips/Python_import.md)
   * [Python_hiddenFeatures](Python/PythonTips/Python_hiddenFeatures.md)
   * [Python_regexParseTree](Python/PythonTips/Python_regexParseTree.md)
-* Ruby
+* [Ruby](Ruby/README.md)
   * [RubyMetaprogramming](Ruby/RubyMetaprogramming.md)
   * [RubyProgrammingLanguage](Ruby/RubyProgrammingLanguage.md)
-* TheLittleSchemer
+* [TheLittleSchemer](TheLittleSchemer/README.md)
   * [Chapter 3](TheLittleSchemer/3.md)
   * [Chapter 4](TheLittleSchemer/4.md)
-* Docker
+* [Docker](Docker/README.md)
   * [Docker](Docker/Docker.md)
-* Dairy
+* [Dairy](Daily/README.md)
   * [20170615](Diary/20170615.md)
-* [Leetcode](Tools/leetcode.md)
-* [Git](Tools/git.md)
-* [Tools](Tools/A.md)
+* [Tools](Tools/README.md)
+  * [Leetcode](Tools/leetcode.md)
+  * [Git](Tools/git.md)
+  * [Tools](Tools/A.md)
