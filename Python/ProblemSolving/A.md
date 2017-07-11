@@ -693,5 +693,44 @@ class AVLTree(BinarySearchTree):
 ```
 ## Chapter 7 Graph
 ```
+class Vertex(object):
+    """docstring for Vertex"""
+    def __init__(self, key):
+        self.id = key
+        self.connectedTo = {}
+    def __str__(self):
+        return str(self.id) + ' connectedTo: ' + str([x.id for x in self.connectedTo])
+    def addNeighbor(self, nbr, weight=0):
+        self.connectedTo[nbr] = weight
+    def getConnections(self):
+        return self.connectedTo.keys()
+    def getId(self):
+        return self.id
+    def getWeight(self, nbr):
+        return self.connectedTo[nbr]
 
+class Graph(object):
+    """docstring for Graph"""
+    def __init__(self):
+        self.vertList = {}
+        self.numVertices = 0
+    def __contains__(self, n):
+        return n in self.vertList
+    def addVertex(self, key):
+        newVertex = Vertex(key)
+        self.vertList[key] = newVertex
+        self.numVertices += 1
+        return newVertex
+    def getVertex(self, n):
+        return self.vertList[n] if n in self.vertList else None
+    def addEdge(self, f, t, cost=0):
+        if f not in self.vertList:
+            nv = self.addVertex(f)
+        if t not in self.vertList:
+            nv = self.addVertex(t)
+        self.vertList[f].addNeighbor(self.vertList[t], weight=cost)
+    def getVertices(self):
+        return self.vertList.keys()
+    def __iter__(self):
+        return iter(self.vertList.values())
 ```
