@@ -191,7 +191,7 @@ class HashTable(object):
             if self.slots[p] == key:
                 found = True
             else:
-                oldhash = self.rehash(p, self.size)
+                p = self.rehash(p, self.size)
                 if p == oldhash:
                     stop = True
         return data
@@ -213,18 +213,18 @@ if __name__ == '__main__':
 ### Sorting
 ```
 def bubbleSort(alist):
-    for pas in range(0, len(alist)):
+    for pas in range(len(alist)-1, 0, -1):
         for j in range(pas):
             if alist[j] > alist[j + 1]:
                 alist[j], alist[j + 1] = alist[j + 1], alist[j]
 
 def selectionSort(alist):
-    for pas in range(len(alist)-1,0,-1):
-        pos = 0
+    for pas in range(len(alist)-1, 0, -1):
+        p = 0
         for l in range(1, pas + 1):
-            if alist[l] > alist[pos]:
-                pos = l
-        alist[pas], alist[pos] = alist[pos], alist[pas]
+            if alist[l] > alist[p]:
+                p = l
+        alist[pas], alist[p] = alist[p], alist[pas]
 
 def insertSort(alist):
     for i in range(1, len(alist)):
