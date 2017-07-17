@@ -1,6 +1,7 @@
 # summary
 
 * [Python](Python/README.md)
+  * [ScrapyRedis](Python/ScrapyRedis/A.md)
   * [Flask](Python/Flask/A.md)
   * [PythonCookbook](Python/PythonCookbook/summary.md)
   * [ProblemSolving](Python/ProblemSolving/A.md)
