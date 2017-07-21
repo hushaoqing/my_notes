@@ -49,3 +49,24 @@ A().a()
 # start
 # sss
 ```
+
+如何实现python -m 参数的功能？
+```
+# !usr/bin/python
+# coding=utf-8
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+import click
+import pdir
+
+@click.command()
+@click.option("-m", default="pdir")
+def imp_package(m):
+    p = __import__(m)
+    print pdir(p)
+
+if __name__ == '__main__':
+    imp_package()
+```
