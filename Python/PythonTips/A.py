@@ -24,9 +24,7 @@ class lazyproperty(object):
         if instance is None:
             return self
         else:
-            print instance
             value = self.func(instance)
-            print self.func.__name__
             setattr(instance, self.func.__name__, value)
             return value
 import math
