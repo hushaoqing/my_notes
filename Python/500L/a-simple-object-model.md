@@ -1,7 +1,7 @@
 # 一个简单的对象模型
 ### Carl Friedrich Bolz
 <markdown>
-Carl Friedrich Bolz是伦敦国王学院的研究员，对各种动态语言的实现和优化有着广泛的兴趣。他是PyPy / RPython的核心作者之一，致力于Prolog，Racket，Smalltalk，PHP和Ruby的实现。他在Twitter上的[@cfbolz](https://twitter.com/cfbolz)。
+Carl Friedrich Bolz是伦敦国王学院的研究员，对各种动态语言的实现和优化有着广泛的兴趣。他是PyPy / RPython的核心作者之一，致力于Prolog，Racket，Smalltalk，PHP和Ruby的实现。他的Twitter[@cfbolz](https://twitter.com/cfbolz)。
 </markdown>
 ## 介绍
 
