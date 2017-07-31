@@ -1,3 +1,4 @@
+从ruby中深刻理解到了python中的self, Ruby是一门设计很好的语言
 ## Ruby metaprogramming
 
 ### Chapter 1 The Object Model
