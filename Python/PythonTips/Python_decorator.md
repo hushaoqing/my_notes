@@ -98,3 +98,38 @@ TypeError
 
 test_g
 ```
+
+## Closure
+
+```
+# !usr/bin/python
+# coding=utf-8
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+class ClosureInstance:
+    """docstring for ClosureInstance"""
+    def __init__(self, locals=None):
+        print sys._getframe(1).f_code
+        if locals is None:
+            locals = sys._getframe(1).f_locals
+        self.__dict__.update((k,v) for k,v in locals.items() if callable(v))
+        print self.__dict__
+
+    def __len__(self):
+        return self.__dict__["__len__"]()
+
+def Stack():
+    items = []
+    def push(item):
+        items.append(item)
+    def pop():
+        return items.pop()
+    def __len__():
+        return len(items)
+    return ClosureInstance()
+s = Stack()
+#{'push': <function push at 0x7f3c214bd140>, '__len__': <function __len__ at 0x7f3c214bd230>, 'pop': <function pop at 0x7f3c214bd1b8>}
+```
