@@ -262,6 +262,16 @@ def mergeSort(alist):
             j += 1
             k += 1
     print("Merging ",alist)
+    
+def quick_sort(alist):
+    if len(alist) <= 1:return alist
+    mid   = alist[0]
+    first = [i for i in alist[1:] if i < mid]
+    end   = [i for i in alist[1:] if i >= mid]
+    print first, end
+    return quick_sort(first) + [mid] + quick_sort(end)
+alist = [2,4,1,3,7,9,7]
+print quick_sort(alist)
 
 def quickSort(alist):
     quickSortHelper(alist, 0, len(alist) - 1)
