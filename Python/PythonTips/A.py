@@ -200,3 +200,14 @@ if __name__ == '__main__':
     io_loop = ioloop.IOLoop.current()
     io_loop.run_sync(main)
 
+
+
+# timestamp
+from datetime import datetime
+def time_1970(timestamp):
+    t = datetime.strptime(timestamp, "%Y-%m-%d")
+    epoch = datetime(1970, 1, 1)
+    diff = t - epoch
+    return int(diff.total_seconds())
+
+print time_1970("1899-12-31")
