@@ -14,3 +14,4 @@ git remote set-url origin git@github.com:hushaoqing/my_notes.git  改为ssh方�
 新打开shell终端，git push 的时候，需要再次执行 eval "$(ssh-agent -s)"， ssh-add ~/.ssh/id_rsa 两条命令，
 解决方案：1.将这两条命名加入.zhsrc文件里，每次打开shell，自动执行命令。 2. 手动执行
 ```
+
