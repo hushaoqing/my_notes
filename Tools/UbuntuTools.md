@@ -2,6 +2,11 @@
 
 Ubuntu 16.04 Python
 
+解决Ubuntu下 中文输入法不能在sublime 里使用：
+1. https://github.com/lyfeyaj/sublime-text-imfix.git 按照文档说明即可
+解决sublime插件Anaconda必须在sudo模式下才能无错误运行：
+2. https://github.com/DamnWidget/anaconda.git GNU/Linux: ~/.local/share/anaconda/logs 修改此文件的权限为自己
+
 myself
 * oh my zsh
 * wakatime.com (statistics your code)
