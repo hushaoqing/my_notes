@@ -8,7 +8,7 @@
 import scrapy
 
 
-class DoubanItem(scrapy.Item):
+class MytestItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    my_item = scrapy.Field()
